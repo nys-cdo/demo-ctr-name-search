@@ -1,0 +1,416 @@
+/* Proxima Nova, the NYSDS typeface, in the weights this page uses. */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/proximanova-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/proximanova-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/proximanova-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/proximanova-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Name part colors: first = teal, middle = purple, last = orange, suffix = yellow,
+ * from the NYSDS agency palettes. Every chip also names its part in text, so color
+ * is never the only cue. NYSDS ships one light theme, so the page does too.
+ */
+:root {
+  --k-first: var(--nys-color-business-teal-600);
+  --k-mid: var(--nys-color-health-purple-600);
+  --k-last: var(--nys-color-admin-orange-600);
+  --k-suf: var(--nys-color-yellow-700);
+  --k-none: var(--nys-color-neutral-100);
+  --ns-line: var(--nys-color-neutral-100);
+  --ns-sunk: var(--nys-color-neutral-10);
+  /* Roboto Mono isn't loaded, so reach for the system's monospace first. */
+  --ns-mono: ui-monospace, 'SF Mono', Menlo, var(--nys-font-family-monospace);
+  /* One content width for the header, the cards, and the footer. */
+  --nys-max-width--content: 80rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  background: var(--nys-color-surface);
+  color: var(--nys-color-text);
+}
+
+.ns-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-400);
+  padding-block: var(--nys-space-500) var(--nys-space-800);
+}
+
+.ns-page p,
+.ns-page h1,
+.ns-page h3,
+.ns-page ul,
+.ns-page dl,
+.ns-page dd {
+  margin: 0;
+}
+
+.ns-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-150);
+  max-width: 46rem;
+}
+.ns-eyebrow {
+  font: var(--nys-font-weight-semibold) var(--nys-font-size-ui-sm) / var(--nys-font-lineheight-ui-sm)
+    var(--nys-font-family-ui);
+  letter-spacing: var(--nys-font-letterspacing-ui-sm, 0.04em);
+  text-transform: uppercase;
+  color: var(--nys-color-theme);
+}
+.ns-hero h1 {
+  font: var(--nys-font-weight-bold) var(--nys-font-size-h1) / var(--nys-font-lineheight-h1) var(--nys-font-family-heading);
+  text-wrap: balance;
+}
+.ns-claim {
+  font-size: var(--nys-font-size-body-lg);
+  line-height: var(--nys-font-lineheight-body-lg);
+  color: var(--nys-color-text-weak);
+}
+.ns-intro {
+  max-width: 68ch;
+}
+
+/* Cards in a row line up at the top and keep their own height. */
+.ns-row {
+  align-items: flex-start;
+}
+
+.ns-lede {
+  color: var(--nys-color-text-weak);
+  max-width: 68ch;
+}
+.ns-aside {
+  color: var(--nys-color-text-weak);
+  font-size: var(--nys-font-size-body-sm);
+  line-height: var(--nys-font-lineheight-body-sm);
+}
+.ns-page code {
+  font-family: var(--ns-mono);
+  font-size: 0.875em;
+  background: var(--ns-sunk);
+  padding: 0 var(--nys-space-50);
+  overflow-wrap: anywhere;
+}
+
+/* Part chips */
+.k-first { --k: var(--k-first); }
+.k-mid { --k: var(--k-mid); }
+.k-last { --k: var(--k-last); }
+.k-suf { --k: var(--k-suf); }
+.k-none { --k: var(--k-none); }
+
+.ns-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nys-space-100);
+  align-items: flex-start;
+}
+.nsw {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--nys-space-50);
+}
+.nsw b {
+  font-weight: var(--nys-font-weight-semibold);
+  padding: var(--nys-space-50) var(--nys-space-100);
+  background: var(--ns-sunk);
+  border-bottom: var(--nys-border-width-lg) solid var(--k);
+  border-radius: var(--nys-radius-sm) var(--nys-radius-sm) 0 0;
+}
+.nsw i,
+.ns-slot i,
+.ns-lbl {
+  font: var(--nys-font-weight-semibold) var(--nys-font-size-ui-xs) / 1 var(--nys-font-family-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--nys-color-text-weak);
+}
+
+/* Try a name */
+.ns-try-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-300);
+}
+.ns-field {
+  max-width: 36rem;
+}
+.ns-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nys-space-100);
+  align-items: center;
+}
+.ns-examples > span {
+  font-weight: var(--nys-font-weight-semibold);
+  margin-inline-end: var(--nys-space-50);
+}
+.ns-out {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-250);
+  border-top: var(--nys-border-width-sm) solid var(--ns-line);
+  padding-top: var(--nys-space-300);
+}
+/*
+ * A step's description shrinks to fit its content, so give it the step's width
+ * outright: the output's width less the step number column, up to the width
+ * the step list allows.
+ */
+.ns-out {
+  container-type: inline-size;
+}
+.ns-out [slot='description'] {
+  width: min(100cqw - 3rem, 46rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-150);
+  padding-top: var(--nys-space-100);
+  color: var(--nys-color-text);
+}
+.ns-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--nys-space-100);
+}
+.ns-slot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-50);
+  padding: var(--nys-space-100) var(--nys-space-150);
+  background: var(--ns-sunk);
+  border: var(--nys-border-width-sm) solid var(--ns-line);
+  border-bottom: var(--nys-border-width-lg) solid var(--k);
+  border-radius: var(--nys-radius-md) var(--nys-radius-md) 0 0;
+  min-width: 0;
+}
+.ns-slot b {
+  font-weight: var(--nys-font-weight-semibold);
+  font-size: var(--nys-font-size-body-lg);
+  overflow-wrap: anywhere;
+}
+.ns-slot b.ns-nil {
+  font-weight: var(--nys-font-weight-regular);
+  font-size: var(--nys-font-size-body-sm);
+  color: var(--nys-color-text-weak);
+}
+.ns-says {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-50);
+}
+.ns-says li {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: var(--nys-space-100);
+}
+.ns-says li > span:first-child {
+  font-weight: var(--nys-font-weight-semibold);
+}
+.ns-says q {
+  quotes: none;
+  font-family: var(--ns-mono);
+  font-size: 0.875em;
+  background: var(--ns-sunk);
+  border: var(--nys-border-width-sm) solid var(--ns-line);
+  padding: 0 var(--nys-space-50);
+}
+.ns-alts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-200);
+}
+.ns-alt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-100);
+  padding-left: var(--nys-space-150);
+  border-left: var(--nys-border-width-md) solid var(--ns-line);
+}
+.ns-hit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nys-space-50);
+  font-weight: var(--nys-font-weight-semibold);
+  color: var(--nys-color-success-strong);
+}
+.ns-note {
+  background: var(--nys-color-info-weak);
+  border-left: var(--nys-border-width-lg) solid var(--nys-color-info);
+  padding: var(--nys-space-150) var(--nys-space-200);
+}
+.ns-req {
+  color: var(--nys-color-text-weak);
+  font-size: var(--nys-font-size-body-sm);
+}
+.ns-stop {
+  font-weight: var(--nys-font-weight-semibold);
+}
+.ns-vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* How the box is split */
+.ns-rules {
+  display: flex;
+  flex-direction: column;
+}
+.ns-rule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-150);
+  padding-block: var(--nys-space-200);
+  border-top: var(--nys-border-width-sm) solid var(--ns-line);
+}
+.ns-rule:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.ns-rule-head {
+  font-weight: var(--nys-font-weight-semibold);
+}
+
+/* How each part is matched */
+.ns-m {
+  display: flex;
+  flex-direction: column;
+  margin-block: var(--nys-space-200);
+}
+.ns-mr {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--nys-space-100) var(--nys-space-200);
+  padding-block: var(--nys-space-200);
+  border-top: var(--nys-border-width-sm) solid var(--ns-line);
+}
+.ns-mr:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.ns-mr .nsw b {
+  font-size: var(--nys-font-size-body-sm);
+}
+.ns-mr-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-100);
+  min-width: 0;
+}
+
+/* Examples that find a license, and examples that don't */
+.ns-ex {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-100);
+}
+.ns-ex li {
+  margin: 0;
+  display: flex;
+  gap: var(--nys-space-100);
+  align-items: flex-start;
+}
+.ns-ex nys-icon,
+.ns-hit nys-icon {
+  flex: none;
+  --nys-icon-size: 1.25rem;
+}
+.ns-ex .ok nys-icon,
+.ns-hit nys-icon {
+  color: var(--nys-color-success);
+}
+.ns-ex .no nys-icon {
+  color: var(--nys-color-danger);
+}
+.ns-why {
+  color: var(--nys-color-text-weak);
+}
+
+/* What close spelling means */
+.ns-pairs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--nys-space-300);
+  margin-block: var(--nys-space-200);
+}
+.ns-pairs h3 {
+  font: var(--nys-font-weight-semibold) var(--nys-font-size-h6) / var(--nys-font-lineheight-h6) var(--nys-font-family-heading);
+  margin-bottom: var(--nys-space-100);
+}
+
+/* Questions from testing */
+.ns-q > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nys-space-50);
+  padding-block: var(--nys-space-200);
+  border-top: var(--nys-border-width-sm) solid var(--ns-line);
+}
+.ns-q > div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.ns-q dt {
+  font-weight: var(--nys-font-weight-semibold);
+}
+.ns-q dd {
+  color: var(--nys-color-text-weak);
+}
+.ns-q dd b {
+  color: var(--nys-color-text);
+}
+
+.ns-footer {
+  border-top: var(--nys-border-width-sm) solid var(--ns-line);
+  background: var(--ns-sunk);
+  color: var(--nys-color-text-weak);
+  font-size: var(--nys-font-size-body-sm);
+  padding-block: var(--nys-space-300);
+}
+
+@media (max-width: 40em) {
+  .ns-mr,
+  .ns-says li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--nys-space-50);
+  }
+}

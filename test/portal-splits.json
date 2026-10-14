@@ -1,0 +1,399 @@
+[
+  {
+    "input": "Maria J. Garcia",
+    "parts": {
+      "first": "Maria",
+      "middle": "J.",
+      "last": "Garcia"
+    },
+    "divisions": [
+      {
+        "first": "Maria",
+        "last": "J. Garcia"
+      },
+      {
+        "first": "Maria J.",
+        "last": "Garcia"
+      }
+    ]
+  },
+  {
+    "input": "Maria",
+    "parts": {
+      "last": "Maria"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Garcia, Maria",
+    "parts": {
+      "first": "Maria",
+      "last": "Garcia"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Henry Taveras Sanchez",
+    "parts": {
+      "first": "Henry",
+      "middle": "Taveras",
+      "last": "Sanchez"
+    },
+    "divisions": [
+      {
+        "first": "Henry",
+        "last": "Taveras Sanchez"
+      },
+      {
+        "first": "Henry Taveras",
+        "last": "Sanchez"
+      }
+    ]
+  },
+  {
+    "input": "Michael Johnson Jr.",
+    "parts": {
+      "first": "Michael",
+      "last": "Johnson",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "David Wu",
+    "parts": {
+      "first": "David",
+      "last": "Wu"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Johnson, Michael Jr.",
+    "parts": {
+      "first": "Michael",
+      "last": "Johnson",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Smith, John, Jr.",
+    "parts": {
+      "first": "John",
+      "last": "Smith",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Smith, Jr., John",
+    "parts": {
+      "first": "John",
+      "last": "Smith",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "O'Brien, Jr.",
+    "parts": {
+      "last": "O'Brien",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Mary-Ann O'Brien, Jr.",
+    "parts": {
+      "first": "Mary-Ann",
+      "last": "O'Brien",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Johnson, Donique M.",
+    "parts": {
+      "first": "Donique",
+      "middle": "M.",
+      "last": "Johnson"
+    },
+    "divisions": [
+      {
+        "first": "Donique",
+        "last": "M. Johnson"
+      },
+      {
+        "first": "Donique M.",
+        "last": "Johnson"
+      }
+    ]
+  },
+  {
+    "input": "  ",
+    "parts": null,
+    "divisions": []
+  },
+  {
+    "input": ",",
+    "parts": null,
+    "divisions": []
+  },
+  {
+    "input": "Jr",
+    "parts": {
+      "last": "Jr"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Jr.",
+    "parts": {
+      "last": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "John Jr",
+    "parts": {
+      "last": "John",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Maria De Los Angeles Reynaga Villagomez",
+    "parts": {
+      "first": "Maria",
+      "middle": "De Los Angeles Reynaga",
+      "last": "Villagomez"
+    },
+    "divisions": [
+      {
+        "first": "Maria",
+        "last": "De Los Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria",
+        "middle": "De",
+        "last": "Los Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria",
+        "middle": "De Los",
+        "last": "Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria",
+        "middle": "De Los Angeles",
+        "last": "Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De",
+        "last": "Los Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De",
+        "middle": "Los",
+        "last": "Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De",
+        "middle": "Los Angeles",
+        "last": "Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De",
+        "middle": "Los Angeles Reynaga",
+        "last": "Villagomez"
+      },
+      {
+        "first": "Maria De Los",
+        "last": "Angeles Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De Los",
+        "middle": "Angeles",
+        "last": "Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De Los",
+        "middle": "Angeles Reynaga",
+        "last": "Villagomez"
+      },
+      {
+        "first": "Maria De Los Angeles",
+        "last": "Reynaga Villagomez"
+      },
+      {
+        "first": "Maria De Los Angeles",
+        "middle": "Reynaga",
+        "last": "Villagomez"
+      },
+      {
+        "first": "Maria De Los Angeles Reynaga",
+        "last": "Villagomez"
+      }
+    ]
+  },
+  {
+    "input": "A B C D E F G",
+    "parts": {
+      "first": "A",
+      "middle": "B C D E F",
+      "last": "G"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Kevin O Brien",
+    "parts": {
+      "first": "Kevin",
+      "middle": "O",
+      "last": "Brien"
+    },
+    "divisions": [
+      {
+        "first": "Kevin",
+        "last": "O Brien"
+      },
+      {
+        "first": "Kevin O",
+        "last": "Brien"
+      }
+    ]
+  },
+  {
+    "input": "- . ,",
+    "parts": null,
+    "divisions": []
+  },
+  {
+    "input": "Henry  Taveras   Sanchez",
+    "parts": {
+      "first": "Henry",
+      "middle": "Taveras",
+      "last": "Sanchez"
+    },
+    "divisions": [
+      {
+        "first": "Henry",
+        "last": "Taveras Sanchez"
+      },
+      {
+        "first": "Henry Taveras",
+        "last": "Sanchez"
+      }
+    ]
+  },
+  {
+    "input": "Garcia, Maria Jose III",
+    "parts": {
+      "first": "Maria",
+      "middle": "Jose",
+      "last": "Garcia",
+      "suffix": "III"
+    },
+    "divisions": [
+      {
+        "first": "Maria",
+        "last": "Jose Garcia"
+      },
+      {
+        "first": "Maria Jose",
+        "last": "Garcia"
+      }
+    ]
+  },
+  {
+    "input": "Smith,John",
+    "parts": {
+      "first": "John",
+      "last": "Smith"
+    },
+    "divisions": []
+  },
+  {
+    "input": "José Pérez",
+    "parts": {
+      "first": "José",
+      "last": "Pérez"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Garcia Maria",
+    "parts": {
+      "first": "Garcia",
+      "last": "Maria"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Robert Smith Jr",
+    "parts": {
+      "first": "Robert",
+      "last": "Smith",
+      "suffix": "Jr."
+    },
+    "divisions": []
+  },
+  {
+    "input": "Ann Marie Lee Wu",
+    "parts": {
+      "first": "Ann",
+      "middle": "Marie Lee",
+      "last": "Wu"
+    },
+    "divisions": [
+      {
+        "first": "Ann",
+        "last": "Marie Lee Wu"
+      },
+      {
+        "first": "Ann",
+        "middle": "Marie",
+        "last": "Lee Wu"
+      },
+      {
+        "first": "Ann Marie",
+        "last": "Lee Wu"
+      },
+      {
+        "first": "Ann Marie",
+        "middle": "Lee",
+        "last": "Wu"
+      },
+      {
+        "first": "Ann Marie Lee",
+        "last": "Wu"
+      }
+    ]
+  },
+  {
+    "input": "Li, Wei",
+    "parts": {
+      "first": "Wei",
+      "last": "Li"
+    },
+    "divisions": []
+  },
+  {
+    "input": "Mary Ann Smith-Jones",
+    "parts": {
+      "first": "Mary",
+      "middle": "Ann",
+      "last": "Smith-Jones"
+    },
+    "divisions": [
+      {
+        "first": "Mary",
+        "last": "Ann Smith-Jones"
+      },
+      {
+        "first": "Mary Ann",
+        "last": "Smith-Jones"
+      }
+    ]
+  }
+]

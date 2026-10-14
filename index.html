@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- A training page for the Renew Your License teams. Keep it out of search results. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Try a name and see how Renew Your License splits it into parts and matches each part." />
+    <title>How name search works | Renew Your License</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <nys-skipnav></nys-skipnav>
+    <nys-globalheader appName="Name search guide" homepageLink="./" nysLogo></nys-globalheader>
+
+    <main id="main-content">
+      <div class="nys-grid-container">
+        <div class="nys-grid-row">
+          <div class="nys-grid-col-12 ns-page">
+            <header class="ns-hero">
+              <p class="ns-eyebrow">Renew Your License</p>
+              <h1>How name search works</h1>
+              <p class="ns-claim">One name box, split into parts, each part matched on its own.</p>
+              <p class="ns-intro">
+                The portal asks for one thing: <b>Your full name</b>. License records keep the first, middle, and last name
+                in separate fields, so the portal splits what the licensee types into those parts before it searches. The
+                search then checks each part on its own. It ignores capital letters, accents, and punctuation, and it
+                forgives small spelling differences.
+              </p>
+            </header>
+
+            <nys-card class="ns-try" heading="Try a name" headingLevel="h2">
+              <div class="ns-try-body">
+                <div class="ns-field">
+                  <nys-textinput
+                    id="ns-input"
+                    label="Your full name"
+                    description="Type a name the way a licensee would. This page searches nothing. It shows how the portal reads the name."
+                    value="Maria J. Garcia"
+                  ></nys-textinput>
+                </div>
+                <div class="ns-examples" role="group" aria-labelledby="ns-examples-label">
+                  <span id="ns-examples-label">Examples</span>
+                  <nys-button type="button" variant="outline" size="sm" label="Maria J. Garcia" data-ns="Maria J. Garcia"></nys-button>
+                  <nys-button type="button" variant="outline" size="sm" label="Maria" data-ns="Maria"></nys-button>
+                  <nys-button type="button" variant="outline" size="sm" label="Garcia, Maria" data-ns="Garcia, Maria"></nys-button>
+                  <nys-button type="button" variant="outline" size="sm" label="Henry Taveras Sanchez" data-ns="Henry Taveras Sanchez"></nys-button>
+                  <nys-button type="button" variant="outline" size="sm" label="Michael Johnson Jr." data-ns="Michael Johnson Jr."></nys-button>
+                  <nys-button type="button" variant="outline" size="sm" label="David Wu" data-ns="David Wu"></nys-button>
+                </div>
+
+                <div class="ns-out">
+                  <nys-processlist id="ns-steps" aria-label="How the portal reads this name">
+                    <nys-processlistitem label="The portal splits it into parts">
+                      <div slot="description" id="ns-step-split"></div>
+                    </nys-processlistitem>
+                    <nys-processlistitem label="The search finds licenses where every part matches">
+                      <div slot="description" id="ns-step-match"></div>
+                    </nys-processlistitem>
+                    <nys-processlistitem id="ns-step-alt-item" label="There’s a middle name, so it also tries these splits">
+                      <div slot="description" id="ns-step-alt"></div>
+                    </nys-processlistitem>
+                  </nys-processlist>
+                  <div class="ns-note" id="ns-one-word" hidden></div>
+                  <p class="ns-req" id="ns-req"></p>
+                  <p class="ns-stop" id="ns-stop" hidden></p>
+                </div>
+                <p class="ns-vh" id="ns-live" aria-live="polite"></p>
+              </div>
+            </nys-card>
+
+            <div class="nys-grid-row nys-grid-gap-300 ns-row">
+              <div class="nys-grid-col-12 nys-desktop:nys-grid-col-6">
+                <nys-card heading="How the box is split" headingLevel="h2">
+                  <div class="ns-rules">
+                    <div class="ns-rule">
+                      <p class="ns-rule-head">The first word is the first name, the last word is the last name, and any words between are the middle name.</p>
+                      <div class="ns-words"><span class="nsw k-first"><b>Maria</b><i>first</i></span><span class="nsw k-mid"><b>J.</b><i>middle</i></span><span class="nsw k-last"><b>Garcia</b><i>last</i></span></div>
+                    </div>
+                    <div class="ns-rule">
+                      <p class="ns-rule-head">One word is always a last name.</p>
+                      <div class="ns-words"><span class="nsw k-last"><b>Maria</b><i>last</i></span></div>
+                      <p class="ns-aside">So a first name typed alone is searched as a last name: “Maria” finds last names such as Mariani. The results say “We searched for the last name Maria.”</p>
+                    </div>
+                    <div class="ns-rule">
+                      <p class="ns-rule-head">A comma means the last name comes first.</p>
+                      <div class="ns-words"><span class="nsw k-last"><b>Garcia,</b><i>last</i></span><span class="nsw k-first"><b>Maria</b><i>first</i></span></div>
+                      <p class="ns-aside">Without the comma, “Garcia Maria” searches for the first name Garcia and the last name Maria.</p>
+                    </div>
+                    <div class="ns-rule">
+                      <p class="ns-rule-head">Jr., Sr., II, III, or IV at the end is the suffix.</p>
+                      <div class="ns-words"><span class="nsw k-first"><b>Michael</b><i>first</i></span><span class="nsw k-last"><b>Johnson</b><i>last</i></span><span class="nsw k-suf"><b>Jr.</b><i>suffix</i></span></div>
+                      <p class="ns-aside">It works after a comma too: “Johnson, Michael Jr.”</p>
+                    </div>
+                    <div class="ns-rule">
+                      <p class="ns-rule-head">A two-word first or last name still works.</p>
+                      <p class="ns-aside">The split can’t tell a middle name from half of a two-word name. So when there’s a middle name, the search also tries every other way to split the same words, and a license that matches any one of them is found.</p>
+                      <div class="ns-alt">
+                        <span class="ns-lbl">As split</span>
+                        <div class="ns-words"><span class="nsw k-first"><b>Henry</b><i>first</i></span><span class="nsw k-mid"><b>Taveras</b><i>middle</i></span><span class="nsw k-last"><b>Sanchez</b><i>last</i></span></div>
+                        <span class="ns-lbl">Also tried</span>
+                        <div class="ns-words"><span class="nsw k-first"><b>Henry</b><i>first</i></span><span class="nsw k-last"><b>Taveras Sanchez</b><i>last</i></span></div>
+                        <span class="ns-hit"><nys-icon name="check_circle"></nys-icon>Finds Henry Taveras Sanchez</span>
+                        <div class="ns-words"><span class="nsw k-first"><b>Henry Taveras</b><i>first</i></span><span class="nsw k-last"><b>Sanchez</b><i>last</i></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </nys-card>
+              </div>
+
+              <div class="nys-grid-col-12 nys-desktop:nys-grid-col-6">
+                <nys-card heading="How each part is matched" headingLevel="h2">
+                  <p class="ns-lede">A license is found when every part the licensee typed matches. A part left out isn’t checked.</p>
+                  <div class="ns-m">
+                    <div class="ns-mr">
+                      <span class="nsw k-first"><b>First name</b></span>
+                      <div class="ns-mr-body">
+                        <p>Starts with what was typed, or is a close spelling.</p>
+                        <ul class="ns-ex">
+                          <li class="ok"><nys-icon name="check_circle"></nys-icon><span>“Rob” finds Robert. “Catherine” finds Katherine.</span></li>
+                          <li class="no"><nys-icon name="cancel"></nys-icon><span>“Bob” doesn’t find Robert.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ns-mr">
+                      <span class="nsw k-mid"><b>Middle name</b></span>
+                      <div class="ns-mr-body">
+                        <p>Starts with what was typed. An initial is enough.</p>
+                        <ul class="ns-ex">
+                          <li class="ok"><nys-icon name="check_circle"></nys-icon><span>“J” finds Josefina. Leave it out, and any middle name or none matches.</span></li>
+                          <li class="no"><nys-icon name="cancel"></nys-icon><span>“J” doesn’t find a license that has no middle name.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ns-mr">
+                      <span class="nsw k-last"><b>Last name, 3 or more letters</b></span>
+                      <div class="ns-mr-body">
+                        <p>Starts with what was typed, or is a close spelling.</p>
+                        <ul class="ns-ex">
+                          <li class="ok"><nys-icon name="check_circle"></nys-icon><span>“Garc” finds Garcia. “Jonson” finds Johnson.</span></li>
+                          <li class="no"><nys-icon name="cancel"></nys-icon><span>“Smyth” doesn’t find Smith.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ns-mr">
+                      <span class="nsw k-last"><b>Last name, 1 or 2 letters</b></span>
+                      <div class="ns-mr-body">
+                        <p>Is exactly what was typed, so a short name doesn’t bring back a crowd.</p>
+                        <ul class="ns-ex">
+                          <li class="ok"><nys-icon name="check_circle"></nys-icon><span>“Wu” finds Wu.</span></li>
+                          <li class="no"><nys-icon name="cancel"></nys-icon><span>“Wu” doesn’t find Wulf.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ns-mr">
+                      <span class="nsw k-suf"><b>Suffix</b></span>
+                      <div class="ns-mr-body">
+                        <p>Is the same suffix, however it’s written.</p>
+                        <ul class="ns-ex">
+                          <li class="ok"><nys-icon name="check_circle"></nys-icon><span>“Jr” finds JR. Leave it out, and any suffix or none matches.</span></li>
+                          <li class="no"><nys-icon name="cancel"></nys-icon><span>“Jr.” doesn’t find a license that has no suffix.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ns-note"><b>Never matters:</b> capital letters, accents, and punctuation. “perez” finds Pérez, “Jr.” finds JR, and “Kevin O Brien” finds Kevin O’Brien.</p>
+                </nys-card>
+              </div>
+            </div>
+
+            <div class="nys-grid-row nys-grid-gap-300 ns-row">
+              <div class="nys-grid-col-12 nys-desktop:nys-grid-col-6">
+                <nys-card heading="What close spelling means" headingLevel="h2">
+                  <p class="ns-lede">The search compares short runs of letters in the two names. When enough of them line up, the names match. That forgives a missing, extra, or changed letter in a longer name. It doesn’t know nicknames, and it often misses a typo in a short name, where one wrong letter changes most of the runs.</p>
+                  <div class="ns-pairs">
+                    <div>
+                      <h3>Close enough</h3>
+                      <ul class="ns-ex">
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Garca finds García</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Jonson finds Johnson</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Thomson finds Thompson</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Catherine finds Katherine</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Rodriquez finds Rodriguez</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>McDonald finds MacDonald</span></li>
+                        <li class="ok"><nys-icon name="check_circle"></nys-icon><span>Mariana finds Maria</span></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3>Not close enough</h3>
+                      <ul class="ns-ex">
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Micheal doesn’t find Michael</span></li>
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Jon doesn’t find John</span></li>
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Smyth doesn’t find Smith</span></li>
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Stephen doesn’t find Steven</span></li>
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Mike doesn’t find Michael <span class="ns-why">(nickname)</span></span></li>
+                        <li class="no"><nys-icon name="cancel"></nys-icon><span>Bob doesn’t find Robert <span class="ns-why">(nickname)</span></span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="ns-lede">Close spelling applies to the first name and to a last name of 3 or more letters. The middle name and suffix don’t use it.</p>
+                </nys-card>
+              </div>
+
+              <div class="nys-grid-col-12 nys-desktop:nys-grid-col-6">
+                <nys-card heading="Questions from testing" headingLevel="h2">
+                  <dl class="ns-q">
+                    <div>
+                      <dt>I typed a first name and got nothing, or the wrong people.</dt>
+                      <dd>One word is always a last name, so <b>Maria</b> searches for last names such as Maria and Mariani. The results say which last name was searched. Type the first and last name.</dd>
+                    </div>
+                    <div>
+                      <dt>The first name I typed came back as the last name.</dt>
+                      <dd>It was typed alone, or the name was typed last name first without a comma. Type the first name first, or use a comma: <b>Garcia, Maria</b>.</dd>
+                    </div>
+                    <div>
+                      <dt>Adding a middle initial made the license disappear.</dt>
+                      <dd>A typed middle name has to match. If the license has no middle name, or a different one, leave it out. Leaving it out never hides a license.</dd>
+                    </div>
+                    <div>
+                      <dt>A nickname didn’t work.</dt>
+                      <dd>Search uses the name on the license. <b>Rob</b> finds Robert because Robert starts with Rob. <b>Bob</b> doesn’t.</dd>
+                    </div>
+                    <div>
+                      <dt>A typo didn’t match.</dt>
+                      <dd>Close spelling catches small differences, not every typo. Short names and swapped letters are the usual misses.</dd>
+                    </div>
+                    <div>
+                      <dt>Too many results came back.</dt>
+                      <dd>Add the first name. If the list still mixes licenses, the results screen asks for the license type, then the ZIP or postal code, each only when it tells the licenses apart. They narrow the list; they don’t change how the name matches.</dd>
+                    </div>
+                  </dl>
+                </nys-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nys-backtotop></nys-backtotop>
+
+    <footer class="ns-footer">
+      <div class="nys-grid-container">
+        <div class="nys-grid-row">
+          <p class="nys-grid-col-12">
+            Checked on 2026-10-13 against the code that dev and stage run: the portal’s <code>src/format/full-name.ts</code>
+            and the API’s <code>src/domain/licenses/search.ts</code>. The rules are FR-110 in the PRD and DL-249, DL-250,
+            DL-272, and DL-277 in the decision log. The example names are illustrations, not license records.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
